@@ -72,6 +72,7 @@ var PromptContainer = React.createClass({
       <Prompt
         urlString={this.state.urlString}
         entity_types={this.state.entity_types}
+        selectedEntities={this.state.selectedEntities}
         toggleKeyword={this.toggleKeyword}
         onUpdateUrl={this.handleUpdateUrl}
         onSubmitUrl={this.handleSubmitUrl}

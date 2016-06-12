@@ -23,9 +23,26 @@ var styles = {
   },
 
   keywords: {
+    border: '1px solid black',
     display: 'inline-block',
     padding: '0.5em 1em 0.5em 1em',
-    float: 'left'
+    margin: '0.3em',
+    float: 'left',
+    textTransform: 'uppercase',
+    textDecoration: 'none',
+    color: 'black'
+  },
+
+  activeKeywords: {
+    border: '1px solid red',
+    display: 'inline-block',
+    padding: '0.5em 1em',
+    margin: '0.3em',
+    float: 'left',
+    textDecoration: 'none',
+    textTransform: 'uppercase',
+    fontWeight: '700',
+    color: 'red'
   },
 
   clearfix: {
