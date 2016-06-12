@@ -18,7 +18,7 @@ function toggleActiveType (active) {
 function ConceptTypes (props) {
   return <div>
            <Link to='/' style={styles.logo}>
-            Visay
+              Simple Search
            </Link>
            <div style={styles.typesWrapper}>
               {props.concepts.map(function(concept, idx) {

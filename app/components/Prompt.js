@@ -14,7 +14,7 @@ function toggleFilters (entities, element) {
 function Prompt (props) {
   return (
     <div className="text-center" style={styles.welcomeForm}>
-      <h1 style={styles.header}>VIZAID</h1>
+      <h1 style={styles.header}>SIMPLE SEARCH</h1>
       <h3 style={styles.subheader}>A BETTER WAY TO RESEARCH</h3>
       <form className="input-group" onSubmit={props.onSubmitUrl} style={styles.input}>
         <input
