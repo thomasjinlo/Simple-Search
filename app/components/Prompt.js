@@ -1,6 +1,16 @@
 var React = require('react');
 var styles = require('../styles');
 
+var clickedFitlers = [];
+
+function toggleFilters (entities, element) {
+  if (entities.includes(element)) {
+    return styles.activeKeywords
+  } else {
+    return styles.keywords
+  }
+}
+
 function Prompt (props) {
   return (
     <div className="text-center" style={styles.welcomeForm}>
@@ -23,7 +33,7 @@ function Prompt (props) {
       <h5 style={styles.filter}>FILTER BY CATEGORIES</h5>
       <div style={styles.keywordContainer}>
         {props.entity_types.map((element) => {
-          return <div style={styles.keywords} onClick={props.toggleKeyword.bind(this, element)}>{element}</div>
+          return <a href="#" style={toggleFilters(props.selectedEntities, element)} onClick={props.toggleKeyword.bind(this, element)}>{element}</a>
         })}
         <div style={styles.clearfix} />
       </div>
