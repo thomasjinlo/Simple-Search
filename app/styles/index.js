@@ -24,6 +24,18 @@ var styles = {
 
   clearfix: {
     clear: 'both'
+  },
+
+  types: {
+    display: 'inline-block',
+    padding: '.2em .5em',
+    border: '1px solid #333',
+    margin: '1em'
+  },
+
+  typesWrapper: {
+    border: '1px solid #eee',
+    margin: '0 auto'
   }
 
 }

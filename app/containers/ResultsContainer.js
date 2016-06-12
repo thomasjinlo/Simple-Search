@@ -11,14 +11,16 @@ var ResultsContainer = React.createClass({
   getInitialState() {
     return {
       concepts: [],
-      isLoading: true
+      isLoading: true,
+      keywords: []
     }
   },
 
   componentDidMount() {
-    var query = this.props.location.query;
+    console.log(this.props.location)
+    var state = this.props.location.state;
 
-    api_service.getConcepts(query.urlString, query.entities)
+    api_service.getConcepts(state.urlString, state.entities)
       .then((concepts) => {
         this.setState({
           concepts: concepts,
@@ -27,11 +29,27 @@ var ResultsContainer = React.createClass({
       })
   },
 
+  handleClickType (keywords) {
+
+    api_service.getSummaries(keywords)
+      .then((summaries) => {
+        this.setState({
+          keywords: summaries
+        })
+      })
+
+    // this.setState({
+    //   keywords: keywords
+    // })
+  },
+
   render () {
     return (
       <Concept
         isLoading={this.state.isLoading}
-        concepts={this.state.concepts} />
+        concepts={this.state.concepts}
+        onClickType={this.handleClickType}
+        keywords={this.state.keywords} />
     )
   }
 })

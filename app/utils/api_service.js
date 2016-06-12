@@ -1,13 +1,12 @@
 var axios = require('axios');
 var entityURI = "https://api.havenondemand.com/1/api/sync/extractentities/v2?";
 var relatedConceptsURI = "https://api.havenondemand.com/1/api/async/findrelatedconcepts/v1?"
+var findSimilarURI = "https://api.havenondemand.com/1/api/sync/findsimilar/v1?"
 
 var key = '73177e0c-136f-450d-bc5c-180df6b09b16'
 
 function getEntities(url, entities) {
-  console.log(entities)
   var encodedUrl = encodeURI(url);
-
   return axios.get(entityURI,
     {
       params: {
@@ -27,7 +26,7 @@ function getRelatedConcepts(entities) {
       {
         params: {
           text: entity,
-          max_results: 5,
+          max_results: 4,
           apikey: key
         }
       }
@@ -49,6 +48,36 @@ function getRelatedConcepts(entities) {
   })
 }
 
+function findSimilar(keyword) {
+  return axios.get(findSimilarURI,
+    {
+      params: {
+        summary: 'concept',
+        text: keyword,
+        min_score: 60,
+        absolute_max_results: 1,
+        apikey: key
+      }
+    }
+  ).then((summary) => {
+    return summary.data.documents[0].summary
+  })
+}
+
+function getBlurbs(keywords) {
+  return axios.all(keywords.map((keyword) => {
+    return findSimilar(keyword)
+      .then((summary) => {
+        return { keyword: keyword, summary: summary }
+      })
+  }))
+  .then((summaries) => {
+    return summaries
+  })
+}
+
+// Module
+
 var helpers = {
   getConcepts(url, entities) {
     return getEntities(url, entities)
@@ -64,7 +93,14 @@ var helpers = {
             return concepts
           })
       })
-    }
+    },
+
+  getSummaries(keywords) {
+    return getBlurbs(keywords)
+      .then((summaries) => {
+        return summaries
+      })
+  }
 }
 
 module.exports = helpers;

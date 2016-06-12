@@ -51,10 +51,10 @@ var PromptContainer = React.createClass({
 
     this.context.router.push({
       pathname: '/results',
-      query: {
+      state: {
         urlString: urlString,
         entities: this.state.selectedEntities
-      }  
+      }
     });
   },
 
