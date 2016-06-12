@@ -1,0 +1,35 @@
+{
+  "name": "better-research",
+  "version": "1.0.0",
+  "description": "Research Helper tool for students using the Haven on Demand platform API",
+  "main": "index.js",
+  "scripts": {
+    "production": "webpack -p",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomasjinlo/better-research.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thomasjinlo/better-research/issues"
+  },
+  "homepage": "https://github.com/thomasjinlo/better-research#readme",
+  "dependencies": {
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-router": "^2.4.1"
+  },
+  "devDependencies": {
+    "axiom": "^0.1.6",
+    "axios": "^0.11.0",
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-preset-react": "^6.5.0",
+    "html-webpack-plugin": "^2.20.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
