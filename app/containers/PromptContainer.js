@@ -21,16 +21,20 @@ var PromptContainer = React.createClass({
         'universities',
         'profanities',
         'films',
-        'address_au',
-        'address_ca',
-        'address_de',
-        'address_es',
-        'address_fr',
+        'address_us',
         'person_fullname_eng',
         'person_name_component_eng',
         'pil',
         'pil_ext',
-        'medical_conditions'
+        'medical_conditions',
+        'number_phone_us',
+        'date_eng',
+        'holidays',
+        'internet',
+        'internet_email',
+        'teams',
+        'bankaccount_us'
+
       ],
       selectedEntities: []
     }

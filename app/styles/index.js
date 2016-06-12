@@ -40,10 +40,9 @@ var styles = {
   },
 
   keywords: {
-    border: '1px solid black',
+    font: '.5em',
     display: 'inline-block',
-    padding: '0.5em 1em 0.5em 1em',
-    margin: '0.3em',
+    padding: '0.5em 1em',
     float: 'left',
     textTransform: 'uppercase',
     textDecoration: 'none',
@@ -51,10 +50,9 @@ var styles = {
   },
 
   activeKeywords: {
-    border: '1px solid red',
+    font: '.5em',
     display: 'inline-block',
     padding: '0.5em 1em',
-    margin: '0.3em',
     float: 'left',
     textDecoration: 'none',
     textTransform: 'uppercase',
@@ -67,15 +65,17 @@ var styles = {
   },
 
   types: {
+    fontSize: '1.3em',
     display: 'inline-block',
-    padding: '.2em .5em',
+    padding: '.4em .8em',
     border: '1px solid #333',
     margin: '1em'
   },
 
   activeType: {
+    fontSize: '1.5em',
     display: 'inline-block',
-    padding: '.3em .6em',
+    padding: '.5em 1em',
     border: '2px solid #FF1919',
     fontWeight: '600px',
     color: '#FF1919',
@@ -99,11 +99,13 @@ var styles = {
 
   keywordsContainer: {
     padding: '10px',
-    height: '300px',
+    height: '500px',
     position: 'fixed'
   },
 
   summaryContainer: {
+    padding: '0 5px',
+    fontSize: '1.3em',
     textAlign:"left",
     textTransform: "capitalize",
     overflow: 'scroll',

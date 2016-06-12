@@ -21,13 +21,13 @@ function ConceptTypes (props) {
             Visay
            </Link>
            <div style={styles.typesWrapper}>
-              {props.concepts.map((concept, idx) => {
+              {props.concepts.map(function(concept, idx) {
                 return <div style={toggleActiveType(concept.active)} onClick={props.onClickType.bind(this, concept.keywords, idx)}>{concept.type}</div>
               })}
            </div>
            <Keywords
              concepts={props.concepts}
-             keywords={props.keywords}  />
+             keywords={props.keywords} />
          </div>
 }
 

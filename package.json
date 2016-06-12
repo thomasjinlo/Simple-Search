@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "production": "webpack -p",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "progress": "webpack --progress -p"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,8 @@
   },
   "homepage": "https://github.com/thomasjinlo/better-research#readme",
   "dependencies": {
+    "babel-preset-es2015": "^6.9.0",
+    "html-webpack-plugin": "^2.21.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-router": "^2.4.1"
