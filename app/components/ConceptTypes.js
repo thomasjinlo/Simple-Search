@@ -3,10 +3,6 @@ var styles = require('../styles');
 var Keywords = require('./Keywords');
 var Link = require('react-router').Link;
 
-function puke (object) {
-  return <pre>{JSON.stringify(object, null, ' ')}</pre>
-}
-
 function toggleActiveType (active) {
   if (active) {
     return styles.activeType

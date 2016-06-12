@@ -12,7 +12,8 @@ var ResultsContainer = React.createClass({
     return {
       concepts: [],
       isLoading: true,
-      keywords: []
+      keywords: [],
+      urls: []
     }
   },
 
@@ -27,7 +28,6 @@ var ResultsContainer = React.createClass({
           isLoading: false
         })
       })
-    api_service.getSentiment()
   },
 
   handleClickType (keywords, idx) {
@@ -62,7 +62,8 @@ var ResultsContainer = React.createClass({
         isLoading={this.state.isLoading}
         concepts={this.state.concepts}
         onClickType={this.handleClickType}
-        keywords={this.state.keywords} />
+        keywords={this.state.keywords}
+        urls={this.state.urls} />
     )
   }
 })

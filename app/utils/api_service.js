@@ -86,6 +86,24 @@ function getSentiment() {
       })
 }
 
+function getRelatedUrls(url) {
+  return axios.get(findSimilarURI,
+    {
+      params: {
+        apikey: key,
+        indexes: 'news_eng',
+        url: url,
+        min_score: 50
+      }
+    }
+  ).then((response) => {
+    return response.data.documents
+  })
+  .then((response) => {
+    return response
+  })
+}
+
 // Module
 
 var helpers = {
@@ -111,8 +129,12 @@ var helpers = {
         return summaries
       })
   },
-  getSentiment() {
-    getSentiment()
+
+  getRelatedUrls(url) {
+    return getRelatedUrls(url)
+      .then((urls) => {
+        urls
+      })
   }
 
 }
