@@ -27,6 +27,7 @@ var ResultsContainer = React.createClass({
           isLoading: false
         })
       })
+    api_service.getSentiment()
   },
 
   handleClickType (keywords) {

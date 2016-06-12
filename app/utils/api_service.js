@@ -76,6 +76,16 @@ function getBlurbs(keywords) {
   })
 }
 
+function getSentiment() {
+  var sent_url = 'http://www.huffingtonpost.com/richard-bangs/richards-picks-ten-best-w_b_6220912.html'
+  var sent_api = 'https://api.havenondemand.com/1/api/sync/analyzesentiment/v1?'
+  axios.get(sent_api + 'apikey=' + key + '&url=' + sent_url)
+    .then((response) => {
+        console.log("hello", response);
+        console.log(response['data']['aggregate']['sentiment'])
+      })
+}
+
 // Module
 
 var helpers = {
@@ -100,7 +110,11 @@ var helpers = {
       .then((summaries) => {
         return summaries
       })
+  },
+  getSentiment() {
+    getSentiment()
   }
+
 }
 
 module.exports = helpers;

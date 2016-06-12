@@ -2,7 +2,24 @@ var styles = {
 
   welcomeForm: {
     position: 'absolute',
-    top: '20%'
+    top: '20%',
+    height: '450px',
+    background: '#323299'
+  },
+
+  header: {
+    color: '#FFD27F',
+    fontSize: '8em',
+    letterSpacing: '50px'
+  },
+
+  subheader: {
+    color: 'white',
+    marginBottom: '30px'
+  },
+
+  filter: {
+    color: 'white'
   },
 
   input: {
@@ -39,7 +56,7 @@ var styles = {
   },
 
   keywordsContainer: {
-    maxHeight: '300px',
+    height: '300px',
     background: 'blue',
     position: 'fixed',
   },
