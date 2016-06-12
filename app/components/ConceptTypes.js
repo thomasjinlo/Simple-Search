@@ -1,16 +1,28 @@
 var React = require('react');
 var styles = require('../styles');
 var Keywords = require('./Keywords');
+var Link = require('react-router').Link;
 
 function puke (object) {
   return <pre>{JSON.stringify(object, null, ' ')}</pre>
 }
 
+function toggleActiveType (active) {
+  if (active) {
+    return styles.activeType
+  } else {
+    return styles.types
+  }
+}
+
 function ConceptTypes (props) {
   return <div>
+           <Link to='/' style={styles.logo}>
+            Visay
+           </Link>
            <div style={styles.typesWrapper}>
-              {props.concepts.map((concept) => {
-                return <div style={styles.types} onClick={props.onClickType.bind(this, concept.keywords)}>{concept.type}</div>
+              {props.concepts.map((concept, idx) => {
+                return <div style={toggleActiveType(concept.active)} onClick={props.onClickType.bind(this, concept.keywords, idx)}>{concept.type}</div>
               })}
            </div>
            <Keywords

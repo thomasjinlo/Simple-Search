@@ -29,7 +29,7 @@ var ResultsContainer = React.createClass({
       })
   },
 
-  handleClickType (keywords) {
+  handleClickType (keywords, idx) {
 
     api_service.getSummaries(keywords)
       .then((summaries) => {
@@ -38,9 +38,21 @@ var ResultsContainer = React.createClass({
         })
       })
 
-    // this.setState({
-    //   keywords: keywords
-    // })
+      var concepts = this.state.concepts
+
+      concepts.forEach((element, index) => {
+        if (element.active) {
+          element.active = false;
+        }
+        if (index === idx) {
+          element.active = true;
+        }
+      })
+
+      this.setState({
+        concepts: concepts
+      })
+      console.log(this.state.concepts)
   },
 
   render () {

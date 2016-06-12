@@ -40,7 +40,7 @@ function getRelatedConcepts(entities) {
         .then((jobObj) => {
           return { type: obj.type, keywords: jobObj.data.actions[0].result.entities.map((obj) => {
             return obj.text
-          }) }
+          }), active: false }
         })
     })).then((concepts) => {
       return concepts

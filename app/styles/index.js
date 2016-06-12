@@ -10,6 +10,12 @@ var styles = {
     margin: '0 auto'
   },
 
+  logo: {
+    textDecoration: 'none',
+    textTransform: 'uppercase',
+    padding: '1em'
+  },
+
   keywordContainer: {
     width: '60%',
     margin: '0 auto',
@@ -33,23 +39,41 @@ var styles = {
     margin: '1em'
   },
 
+  activeType: {
+    display: 'inline-block',
+    padding: '.3em .6em',
+    border: '2px solid #FF1919',
+    fontWeight: '600px',
+    color: '#FF1919',
+    margin: '1em'
+  },
+
   typesWrapper: {
     border: '1px solid #eee',
     margin: '0 auto'
   },
 
+  titleContainer: {
+    height: '7em'
+  },
+
+  keywordsTitle: {
+    textTransform: 'Uppercase',
+    fontWeight: '600px',
+    font: '1.5em'
+  },
+
   keywordsContainer: {
-    maxHeight: '300px',
-    background: 'blue',
-    position: 'fixed',
+    padding: '10px',
+    height: '300px',
+    position: 'fixed'
   },
 
   summaryContainer: {
-    textAlign:"center",
+    textAlign:"left",
     textTransform: "capitalize",
-    overflowY: 'scroll',
-    height: '100%',
-    background: 'red'
+    overflow: 'scroll',
+    height: '100%'
   }
 }
 
