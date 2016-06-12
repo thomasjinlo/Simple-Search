@@ -36,8 +36,21 @@ var styles = {
   typesWrapper: {
     border: '1px solid #eee',
     margin: '0 auto'
-  }
+  },
 
+  keywordsContainer: {
+    maxHeight: '300px',
+    background: 'blue',
+    position: 'fixed',
+  },
+
+  summaryContainer: {
+    textAlign:"center",
+    textTransform: "capitalize",
+    overflowY: 'scroll',
+    height: '100%',
+    background: 'red'
+  }
 }
 
 module.exports = styles;
